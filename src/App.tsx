@@ -1,11 +1,11 @@
+import { Header } from './components/Header';
+
 function App() {
   return (
-    <div className="h-screen flex justify-center items-center">
-      <h1 className="text-4xl font-bold text-blue-500">
-        Hello, Vite + TypeScript + TailwindCSS!
-      </h1>
+    <div className="font-['dm_sans', 'sans-serif'] text-[#333] bg-[url('/code-bg.jpg')] bg-cover bg-center bg-no-repeat ">
+      <Header />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
