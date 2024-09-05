@@ -1,5 +1,6 @@
 import { About } from './components/ui/About';
 import { Header } from './components/ui/Header';
+import { Projects } from './components/ui/Projects';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <main>
         <About />
+        <Projects />
       </main>
     </div>
   );
