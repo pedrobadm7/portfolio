@@ -1,6 +1,7 @@
 import { About } from './components/ui/About';
 import { Header } from './components/ui/Header';
 import { Projects } from './components/ui/Projects';
+import { Tech } from './components/ui/Tech';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <main>
         <About />
         <Projects />
+        <Tech />
       </main>
     </div>
   );
