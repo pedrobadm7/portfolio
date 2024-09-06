@@ -22,7 +22,7 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+      <div className=" flex h-16 items-center justify-between px-4 md:px-6">
         <a href="#" className="flex items-center gap-2 text-lg font-bold" onClick={(e) => scrollToSection(e, 'about')}>
           <BriefcaseIcon className="h-6 w-6" />
           <span>Pedro Barros</span>
@@ -43,7 +43,6 @@ export const Header = () => {
         </nav>
 
         <MenuToggle isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
-
       </div>
 
       {isMobileMenuOpen && (
