@@ -1,4 +1,4 @@
-import profileImage from '../../assets/profile.jpg'
+import { projects } from '../../utils/projects'
 import { Card } from '../common/Card'
 
 export const Projects = () => {
@@ -14,22 +14,27 @@ export const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <Card className="overflow-hidden rounded-lg shadow-md">
-            <img
-              src={profileImage}
-              alt="Project 1"
-              width={400}
-              height={225}
-              className="object-cover aspect-video"
 
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-bold mb-2">Project 1</h3>
-              <p className="text-[#555] leading-relaxed">
-                A beautiful and responsive website for a local business.
-              </p>
-            </div>
-          </Card>
+          {projects.map((project) => {
+            return (
+              <Card className="overflow-hidden rounded-lg shadow-md" key={project.name}>
+                <img
+                  src={project.image}
+                  alt="Project 1"
+                  width="100%"
+                  height={225}
+                  className="object-cover aspect-video"
+
+                />
+                <div className="p-4">
+                  <h3 className="text-xl font-bold mb-2">{project.name}</h3>
+                  <p className="text-[#555] leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+              </Card>
+            )
+          })}
         </div>
       </div>
     </section>
