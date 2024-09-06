@@ -3,18 +3,25 @@ import { Card } from '../common/Card'
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-16 px-4 md:px-8 bg-[rgba(255,255,255,0.8)] backdrop-blur-sm">
-      <div className="container mx-auto animate-fade-in">
-        <h2 className="text-3xl font-bold mb-8">My Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card className="animate-fade-in-up">
+    <section id="projects" className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
+        <div className="space-y-3">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">My Projects</h2>
+          <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            Check out some of the projects I've worked on recently. Each project showcases my skills and expertise
+            in web development.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <Card className="overflow-hidden rounded-lg shadow-md">
             <img
               src={profileImage}
               alt="Project 1"
               width={400}
-              height={300}
-              className="rounded-t-lg"
-              style={{ aspectRatio: "400/300", objectFit: "cover" }}
+              height={225}
+              className="object-cover aspect-video"
+
             />
             <div className="p-4">
               <h3 className="text-xl font-bold mb-2">Project 1</h3>

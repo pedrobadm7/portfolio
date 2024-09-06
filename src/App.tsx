@@ -11,10 +11,9 @@ function App() {
       <Header />
       <main>
         <About />
-        <Projects />
         <Tech />
+        <Projects />
         <CallToAction />
-
       </main>
 
     </div>
