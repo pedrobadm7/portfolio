@@ -1,8 +1,15 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, useState } from 'react';
 import { BriefcaseIcon } from '../icons/BriefcaseIcon';
+import { CloseIcon } from '../icons/CloseIcon';
 import { MenuIcon } from '../icons/MenuIcon';
 
 export const Header = () => {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   const scrollToSection = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
     event.preventDefault()
 
@@ -36,10 +43,37 @@ export const Header = () => {
           </a>
         </nav>
 
-        <button className="md:hidden">
-          <MenuIcon className="w-6 h-6" />
+        <button className="md:hidden" onClick={toggleMobileMenu}>
+          {isMobileMenuOpen ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
         </button>
       </div>
+
+      {isMobileMenuOpen && (
+        <nav className="md:hidden bg-background/90 backdrop-blur px-4 py-2 absolute w-full top-16 z-40">
+          <ul className="flex flex-col space-y-2">
+            <li>
+              <a href="#" className="block hover:underline" onClick={(e) => scrollToSection(e, 'about')}>
+                Who I am
+              </a>
+            </li>
+            <li>
+              <a href="#" className="block hover:underline" onClick={(e) => scrollToSection(e, 'tech')}>
+                Tech
+              </a>
+            </li>
+            <li>
+              <a href="#" className="block hover:underline" onClick={(e) => scrollToSection(e, 'projects')}>
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#" className="block hover:underline" onClick={(e) => scrollToSection(e, 'cta')}>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   )
 }
