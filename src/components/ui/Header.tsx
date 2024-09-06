@@ -1,11 +1,13 @@
+import { BriefcaseIcon } from '../icons/BriefcaseIcon'
 import { MenuIcon } from '../icons/MenuIcon'
 
 export const Header = () => {
   return (
-    <header className="py-8 px-4 md:px-8 bg-[rgba(255,255,255,0.8)] backdrop-blur-sm ">
-      <div className="container mx-auto flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold">
-          Pedro Barros
+    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur">
+      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+        <a href="#" className="flex items-center gap-2 text-lg font-bold">
+          <BriefcaseIcon className="h-6 w-6" />
+          <span>Pedro Barros</span>
         </a>
         <nav className="hidden md:flex space-x-4">
           <a href="#" className="hover:underline">
