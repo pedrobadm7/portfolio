@@ -1,7 +1,6 @@
 import { MouseEvent, useState } from 'react';
+import { MenuToggle } from '../common/MenuToggle';
 import { BriefcaseIcon } from '../icons/BriefcaseIcon';
-import { CloseIcon } from '../icons/CloseIcon';
-import { MenuIcon } from '../icons/MenuIcon';
 
 export const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,9 +42,8 @@ export const Header = () => {
           </a>
         </nav>
 
-        <button className="md:hidden" onClick={toggleMobileMenu}>
-          {isMobileMenuOpen ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-        </button>
+        <MenuToggle isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
+
       </div>
 
       {isMobileMenuOpen && (
