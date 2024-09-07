@@ -1,8 +1,8 @@
 import { PhoneIcon } from '../icons/PhoneIcon';
 
 export const CallToAction = () => {
-  const phoneNumber = "73999577204";
-  const message = "Olá! Gostaria de conversar sobre uma possível colaboração.";
+  const phoneNumber = "5573999577204";
+  const message = "Olá Pedro, gostaria de conversar sobre uma possível oportunidade de trabalho como desenvolvedor de software.";
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
