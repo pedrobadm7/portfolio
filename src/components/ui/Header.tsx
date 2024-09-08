@@ -63,7 +63,7 @@ export const Header = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <nav className="md:hidden bg-background/90 backdrop-blur px-4 py-2 absolute w-full top-16 z-40">
+        <nav className="md:hidden bg-border backdrop-blur px-4 py-2 absolute w-full top-16 z-40">
           <ul className="flex flex-col space-y-2">
             <li>
               <a href="#" className="block hover:underline" onClick={(e) => scrollToSection(e, 'about')}>
