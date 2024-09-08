@@ -4,29 +4,29 @@
 
 @layer base {
  :root {
-    --background: 220 80% 10%; /* Um azul escuro e profundo para o fundo */
-    --foreground: 0 0% 100%; /* Branco puro para máximo contraste */
-    --primary: 195 100% 50%; /* Um azul elétrico brilhante para elementos principais */
-    --primary-foreground: 0 0% 100%; /* Branco para garantir contraste com o azul */
-    --secondary: 50 100% 55%; /* Um amarelo-limão vibrante para elementos secundários */
-    --secondary-foreground: 0 0% 10%; /* Preto para legibilidade sobre o amarelo */
-    --accent: 340 100% 60%; /* Rosa neon para detalhes e elementos interativos */
-    --accent-foreground: 0 0% 100%; /* Branco para contraste */
-    --destructive: 0 100% 50%; /* Vermelho intenso para alertas e ações perigosas */
-    --destructive-foreground: 0 0% 100%; /* Branco para contraste no vermelho */
-    --muted: 200 90% 50%; /* Um azul-claro radiante para fundos alternativos */
+    --background: 120 20% 15%; /* Verde musgo escuro para o fundo */
+    --foreground: 0 0% 100%; /* Branco para contrastar bem com o fundo escuro */
+    --primary: 120 60% 40%; /* Um verde floresta suave e natural */
+    --primary-foreground: 0 0% 100%; /* Branco para contraste com o verde */
+    --secondary: 30 60% 50%; /* Um marrom-terra quente para elementos secundários */
+    --secondary-foreground: 0 0% 20%; /* Um marrom mais escuro para legibilidade */
+    --accent: 90 50% 50%; /* Um verde mais vibrante para detalhes */
+    --accent-foreground: 0 0% 100%; /* Branco para manter o contraste com o verde */
+    --destructive: 0 65% 35%; /* Um vermelho-terra para alertas */
+    --destructive-foreground: 0 0% 100%; /* Branco para legibilidade */
+    --muted: 90 30% 40%; /* Verde suave para áreas de fundo e detalhes */
     --muted-foreground: 0 0% 100%; /* Branco para contraste */
-    --card: 340 100% 70%; /* Um tom de rosa claro e chamativo para cartões */
-    --card-foreground: 0 0% 10%; /* Preto para garantir legibilidade */
-    --popover: 50 100% 90%; /* Amarelo claro, quase branco, para popovers */
-    --popover-foreground: 50 100% 10%; /* Preto para contraste com o popover */
-    --border: 340 100% 40%; /* Rosa forte para bordas vibrantes */
-    --input: 195 100% 45%; /* Azul vivo para campos de input */
-    --ring: 50 100% 60%; /* Amarelo radiante para foco/seleção */
-    --radius: 0.5rem; /* Bordas suavemente arredondadas para modernidade */
+    --card: 30 40% 60%; /* Marrom claro para cartões e superfícies */
+    --card-foreground: 0 0% 10%; /* Marrom escuro para legibilidade nos cartões */
+    --popover: 90 20% 85%; /* Um verde claro suave para popovers */
+    --popover-foreground: 120 20% 10%; /* Verde escuro para legibilidade no popover */
+    --border: 30 30% 40%; /* Marrom médio para bordas sutis */
+    --input: 120 40% 35%; /* Verde médio para campos de input */
+    --ring: 90 50% 40%; /* Verde vibrante para foco/seleção */
+    --radius: 0.5rem; /* Bordas arredondadas para um toque mais suave */
     --font-heading: 'IBM Plex Mono', sans-serif;
     --font-body: 'IBM Plex Mono', monospace;
-}
+  }
 }
 
 @layer base {

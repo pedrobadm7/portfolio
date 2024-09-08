@@ -28,7 +28,7 @@ export const Projects = () => {
                 />
                 <div className="p-4">
                   <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-                  <p className="text-[#555] leading-relaxed">
+                  <p className="text-primary-foreground leading-relaxed">
                     {project.description}
                   </p>
                 </div>
