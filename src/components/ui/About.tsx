@@ -33,7 +33,7 @@ export const About = () => {
 
           <button
             onClick={toggleShowMore}
-            className="px-4 py-2 mt-4 font-bold text-primary-foreground bg-muted rounded hover:bg-secondary"
+            className="px-4 py-2 mt-4 font-bold text-primary-foreground bg-muted rounded hover:bg-primary"
           >
             {showMore ? 'Read Less' : 'Read More'}
           </button>
