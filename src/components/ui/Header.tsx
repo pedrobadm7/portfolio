@@ -1,6 +1,8 @@
-import { MouseEvent, useState } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
 import { MenuToggle } from '../common/MenuToggle';
 import { BriefcaseIcon } from '../icons/BriefcaseIcon';
+
+const MEDIUM_SIZE = 768
 
 export const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -17,8 +19,23 @@ export const Header = () => {
     if (element) {
       window.history.pushState(null, '', `#${id}`)
       element.scrollIntoView({ behavior: 'smooth' })
+      setMobileMenuOpen(!isMobileMenuOpen)
     }
   }
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= MEDIUM_SIZE) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.addEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur">
