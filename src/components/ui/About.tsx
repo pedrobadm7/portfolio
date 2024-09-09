@@ -1,9 +1,15 @@
-import { useState } from 'react';
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 
 import profileImage from '../../assets/profile.jpg';
+import { useInView } from '../../hooks/useInView';
+import { cn } from '../../utils/cn';
 
-export function About() {
+export const About = forwardRef<HTMLDivElement | object>((props, ref) => {
   const [showMore, setShowMore] = useState(false);
+  const localRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible] = useInView({ threshold: 0.1 }, localRef);
+
+  useImperativeHandle(ref, () => localRef.current as HTMLDivElement);
 
   const toggleShowMore = () => {
     setShowMore(!showMore);
@@ -11,8 +17,12 @@ export function About() {
 
   return (
     <section
+      ref={localRef}
       id="about"
-      className="w-full py-12 md:py-24 lg:py-32 flex items-center justify-center"
+      className={cn(
+        'w-full py-12 md:py-24 lg:py-32 flex items-center justify-center',
+        `transition-opacity duration-700 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`,
+      )}
     >
       <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
         <div className="space-y-4">
@@ -104,4 +114,4 @@ export function About() {
       </div>
     </section>
   );
-}
+});
