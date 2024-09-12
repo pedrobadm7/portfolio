@@ -1,93 +1,131 @@
-import { MouseEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+
 import { MenuToggle } from '../common/MenuToggle';
 import { BriefcaseIcon } from '../icons/BriefcaseIcon';
 
-const MEDIUM_SIZE = 768
+const MEDIUM_SIZE = 768;
 
-export const Header = () => {
+export function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const scrollToSection = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
-    event.preventDefault()
-
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
 
     if (element) {
-      window.history.pushState(null, '', `#${id}`)
-      element.scrollIntoView({ behavior: 'smooth' })
-      setMobileMenuOpen(!isMobileMenuOpen)
+      window.history.pushState(null, '', `#${id}`);
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(!isMobileMenuOpen);
     }
-  }
+  };
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= MEDIUM_SIZE) {
-        setMobileMenuOpen(false)
+        setMobileMenuOpen(false);
       }
-    }
+    };
 
-    window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.addEventListener('resize', handleResize)
-    }
-  }, [])
+      window.addEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur">
       <div className=" flex h-16 items-center justify-between px-4 md:px-6">
-        <a href="#" className="flex items-center gap-2 text-lg font-bold" onClick={(e) => scrollToSection(e, 'about')}>
+        <button
+          type="button"
+          className="flex items-center gap-2 text-lg font-bold"
+          onClick={() => scrollToSection('about')}
+        >
           <BriefcaseIcon className="h-6 w-6" />
           <span>Pedro Barros</span>
-        </a>
+        </button>
         <nav className="hidden md:flex space-x-4">
-          <a href="#" className="hover:underline" onClick={(e) => scrollToSection(e, 'about')}>
+          <button
+            type="button"
+            className="hover:underline"
+            onClick={() => scrollToSection('about')}
+          >
             Who I am
-          </a>
-          <a href="#" className="hover:underline" onClick={(e) => scrollToSection(e, 'tech')}>
+          </button>
+          <button
+            type="button"
+            className="hover:underline"
+            onClick={() => scrollToSection('tech')}
+          >
             Tech
-          </a>
-          <a href="#" className="hover:underline" onClick={(e) => scrollToSection(e, 'projects')}>
+          </button>
+          <button
+            type="button"
+            className="hover:underline"
+            onClick={() => scrollToSection('projects')}
+          >
             Projects
-          </a>
-          <a href="#" className="hover:underline" onClick={(e) => scrollToSection(e, 'cta')}>
+          </button>
+          <button
+            type="button"
+            className="hover:underline"
+            onClick={() => scrollToSection('cta')}
+          >
             Contact
-          </a>
+          </button>
         </nav>
 
-        <MenuToggle isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
+        <MenuToggle
+          isMobileMenuOpen={isMobileMenuOpen}
+          toggleMobileMenu={toggleMobileMenu}
+        />
       </div>
 
       {isMobileMenuOpen && (
         <nav className="md:hidden bg-border backdrop-blur px-4 py-2 absolute w-full top-16 z-40">
           <ul className="flex flex-col space-y-2">
             <li>
-              <a href="#" className="block hover:underline" onClick={(e) => scrollToSection(e, 'about')}>
+              <button
+                type="button"
+                className="block hover:underline"
+                onClick={() => scrollToSection('about')}
+              >
                 Who I am
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#" className="block hover:underline" onClick={(e) => scrollToSection(e, 'tech')}>
+              <button
+                type="button"
+                className="block hover:underline"
+                onClick={() => scrollToSection('tech')}
+              >
                 Tech
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#" className="block hover:underline" onClick={(e) => scrollToSection(e, 'projects')}>
+              <button
+                type="button"
+                className="block hover:underline"
+                onClick={() => scrollToSection('projects')}
+              >
                 Projects
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#" className="block hover:underline" onClick={(e) => scrollToSection(e, 'cta')}>
+              <button
+                type="button"
+                className="block hover:underline"
+                onClick={() => scrollToSection('cta')}
+              >
                 Contact
-              </a>
+              </button>
             </li>
           </ul>
         </nav>
       )}
     </header>
-  )
+  );
 }
