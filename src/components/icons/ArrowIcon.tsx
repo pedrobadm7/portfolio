@@ -1,6 +1,6 @@
-import { SVGProps } from 'react'
+import { SVGProps } from 'react';
 
-export const ArrowUpIcon = (props: SVGProps<SVGSVGElement>) => {
+export function ArrowUpIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -17,5 +17,5 @@ export const ArrowUpIcon = (props: SVGProps<SVGSVGElement>) => {
       <path d="m5 12 7-7 7 7" />
       <path d="M12 19V5" />
     </svg>
-  )
+  );
 }

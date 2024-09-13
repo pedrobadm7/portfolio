@@ -1,6 +1,6 @@
-import { SVGProps } from 'react'
+import { SVGProps } from 'react';
 
-export const MenuIcon = (props: SVGProps<SVGSVGElement>) => {
+export function MenuIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -18,5 +18,5 @@ export const MenuIcon = (props: SVGProps<SVGSVGElement>) => {
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
     </svg>
-  )
+  );
 }

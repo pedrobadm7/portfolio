@@ -1,4 +1,3 @@
-
 import { About } from './components/ui/About';
 import { CallToAction } from './components/ui/CallToAction';
 import { Footer } from './components/ui/Footer';
