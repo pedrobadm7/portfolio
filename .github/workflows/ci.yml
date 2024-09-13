@@ -26,10 +26,10 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Linting
-        run: yarn ci:linting
+        run: yarn ci:lint
 
       - name: Typechecking
-        run: yarn typechecking
+        run: yarn typecheck
 
       - name: Tests
         run: yarn test:ci
