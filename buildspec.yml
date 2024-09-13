@@ -13,3 +13,8 @@ phases:
   build:
     commands:
       - yarn build
+
+  post_build:
+    commands:
+      - aws s3 sync --delete ./dist s3://pedrobarrosportfolio-bucket
+      - aws cloudfront create-invalidation --distribution-id EXMA36D4K6PP5 --paths /index.html
