@@ -4,7 +4,7 @@ import profileImage from '../../assets/profile.jpg';
 import { useInView } from '../../hooks/useInView';
 import { cn } from '../../utils/cn';
 
-export const About = forwardRef<HTMLDivElement | object>((props, ref) => {
+export const About = forwardRef<HTMLDivElement | object>((_, ref) => {
   const [showMore, setShowMore] = useState(false);
   const localRef = useRef<HTMLDivElement | null>(null);
   const [isVisible] = useInView({ threshold: 0.1 }, localRef);
