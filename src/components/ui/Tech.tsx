@@ -1,3 +1,7 @@
+import { forwardRef, useImperativeHandle, useRef } from 'react';
+
+import { useInView } from '../../hooks/useInView';
+import { cn } from '../../utils/cn';
 import { AngularIcon } from '../icons/AngularIcon';
 import { CssIcon } from '../icons/CssIcon';
 import { CypressIcon } from '../icons/CypressIcon';
@@ -13,13 +17,24 @@ import { PostgreSqlIcon } from '../icons/PostgreSqlIcon';
 import { ReactIcon } from '../icons/ReactIcon';
 import { TypeScriptIcon } from '../icons/TypeScriptIcon';
 
-export function Tech() {
+export const Tech = forwardRef<HTMLDivElement | object>((_, ref) => {
+  const localRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible] = useInView({ threshold: 0.5 }, localRef);
+
+  useImperativeHandle(ref, () => localRef.current as HTMLDivElement);
+
   return (
     <section
+      ref={localRef}
       id="tech"
       className="w-full py-12 md:py-24 lg:py-32 bg-muted flex items-center justify-center"
     >
-      <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
+      <div
+        className={cn(
+          'container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10',
+          `transition-opacity duration-700 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`,
+        )}
+      >
         <div className="space-y-3">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             My Technical Stacks
@@ -119,4 +134,4 @@ export function Tech() {
       </div>
     </section>
   );
-}
+});

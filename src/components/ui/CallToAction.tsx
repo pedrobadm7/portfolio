@@ -1,6 +1,15 @@
+import { forwardRef, useImperativeHandle, useRef } from 'react';
+
+import { useInView } from '../../hooks/useInView';
+import { cn } from '../../utils/cn';
 import { PhoneIcon } from '../icons/PhoneIcon';
 
-export function CallToAction() {
+export const CallToAction = forwardRef<HTMLDivElement | object>((_, ref) => {
+  const localRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible] = useInView({ threshold: 0.3 }, localRef);
+
+  useImperativeHandle(ref, () => localRef.current as HTMLDivElement);
+
   const phoneNumber = '5573999577204';
   const message =
     'Olá Pedro, gostaria de conversar sobre uma possível oportunidade de trabalho como desenvolvedor de software.';
@@ -8,10 +17,18 @@ export function CallToAction() {
 
   return (
     <section
+      ref={localRef}
       id="cta"
-      className="w-full py-12 md:py-24 lg:py-32 bg-muted flex items-center justify-center"
+      className={cn(
+        'w-full py-12 md:py-24 lg:py-32 bg-muted flex items-center justify-center',
+      )}
     >
-      <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+      <div
+        className={cn(
+          'container grid items-center justify-center gap-4 px-4 text-center md:px-6',
+          `transition-opacity duration-700 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`,
+        )}
+      >
         <div className="space-y-3">
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
             Let&apos;s Connect
@@ -37,4 +54,4 @@ export function CallToAction() {
       </div>
     </section>
   );
-}
+});
