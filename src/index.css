@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
- :root {
+  :root {
     --background: 220 80% 10%; /* Um azul escuro e profundo para o fundo */
     --foreground: 0 0% 100%; /* Branco puro para máximo contraste */
     --primary: 195 100% 50%; /* Um azul elétrico brilhante para elementos principais */
@@ -38,7 +38,12 @@
     @apply bg-background text-foreground font-body;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }
