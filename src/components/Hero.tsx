@@ -36,6 +36,7 @@ const Hero = () => {
     }, shouldDelete ? 50 : 100);
 
     return () => clearTimeout(timeout);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayText, currentIndex, isDeleting]);
 
   const scrollToSection = (sectionId: string) => {
@@ -43,11 +44,6 @@ const Hero = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const downloadCV = () => {
-    // In a real implementation, this would download the actual CV
-    console.log('Downloading CV...');
   };
 
   return (
@@ -98,11 +94,18 @@ const Hero = () => {
               View My Work
             </Button>
             <Button
-              onClick={downloadCV}
+              asChild
               variant="outline"
               className="border-2 border-neutral-300 hover:border-teal-600 text-neutral-700 hover:text-teal-600 px-8 py-3 rounded-portfolio font-medium text-lg transition-all duration-200 shadow-portfolio-sm hover:shadow-portfolio-md hover:scale-105"
             >
-              Download CV
+              <a
+                href="/pedro-barros-resume.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download CV
+              </a>
             </Button>
           </div>
 
