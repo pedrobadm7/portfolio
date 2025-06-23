@@ -60,7 +60,7 @@ const Hero = () => {
           {/* Greeting */}
           <div className="animate-fade-in">
             <p className="text-lg sm:text-xl text-neutral-600 font-medium mb-4">
-              Olá, I'm
+              Hello, I'm
             </p>
           </div>
 

@@ -15,9 +15,9 @@ const Footer = () => {
     {
       title: 'Quick Links',
       links: [
-        { label: 'About', href: '#about' },
-        { label: 'Projects', href: '#projects' },
-        { label: 'Contact', href: '#contact' },
+        { label: 'About', href: '#about', external: false },
+        { label: 'Projects', href: '#projects', external: false },
+        { label: 'Contact', href: '#contact', external: false },
       ],
     },
     {
