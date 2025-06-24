@@ -3,6 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
@@ -16,6 +17,10 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const contactInfo = [
     {
@@ -99,15 +104,17 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await emailjs.send(serviceId, templateId, {
+        from_name: formData.name,
+        reply_to: formData.email,
+        message: formData.message,
+      }, publicKey);
 
       toast({
         title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
 
-      // Reset form
       setFormData({
         name: '',
         email: '',
