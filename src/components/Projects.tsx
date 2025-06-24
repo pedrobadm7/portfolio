@@ -5,6 +5,17 @@ import { ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 import { SiGithub } from 'react-icons/si';
 
+// ---- image assets (Vite will hash & copy on build) ----
+import barsalaImg from '@/assets/images/barsala.png';
+import egv4Img from '@/assets/images/egv4.png';
+import fincheckImg from '@/assets/images/fincheck.jpeg';
+import launcherImg from '@/assets/images/launcher.png';
+import mettzerImg from '@/assets/images/mettzer.png';
+import tokenfiImg from '@/assets/images/tokenfi.png';
+import travelAppImg from '@/assets/images/travel-app.png';
+import waiterAppImg from '@/assets/images/waiterApp.jpeg';
+import zelusImg from '@/assets/images/zelus.png';
+
 interface Project {
   id: string;
   title: string;
@@ -26,7 +37,7 @@ const Projects = () => {
       title: 'Tokenfi Launcher',
       description:
         'Launch your own cryptocurrency (like FLOKI) or NFTs without touching a line of code.',
-      image: 'src/assets/images/launcher.png',
+      image: launcherImg,
       technologies: [
         'React',
         'TypeScript',
@@ -43,7 +54,7 @@ const Projects = () => {
       title: 'TokenFi Launchpad',
       description:
         'TokenFi Launchpad is a decentralized launchpad that allows users to raise funds and access liquidity for their tokens.',
-      image: 'src/assets/images/tokenfi.png',
+      image: tokenfiImg,
       technologies: [
         'React',
         'TypeScript',
@@ -60,7 +71,7 @@ const Projects = () => {
       title: 'JP Morgan Chase Equity Gateway',
       description:
         'An automated equity management software that helps you save time and money, cut back on administration and get your employees engaged with their equity awards.',
-      image: 'src/assets/images/egv4.png',
+      image: egv4Img,
       technologies: ['React', 'TypeScript', 'MUI', 'React hooks'],
       category: 'fullstack',
       githubUrl: '',
@@ -72,7 +83,7 @@ const Projects = () => {
       title: 'Zelus',
       description:
         'Zelus is a mobile wallet that allows you to send, receive and store crypto assets.',
-      image: 'src/assets/images/zelus.png',
+      image: zelusImg,
       technologies: [
         'React Native',
         'Ether.js',
@@ -90,7 +101,7 @@ const Projects = () => {
       title: 'Finchek',
       description:
         'Fincheck is a financial control application, allowing you to register bank accounts and record expenses and income in a simple way.',
-      image: 'src/assets/images/fincheck.jpeg',
+      image: fincheckImg,
       technologies: [
         'React',
         'TypeScript',
@@ -109,7 +120,7 @@ const Projects = () => {
       title: 'Mettzer',
       description:
         'Mettzer is a platform designed to simplify the process of writing academic papers. It helps students focus on content by automating formatting and structure, making it easier to produce high-quality work without sacrificing time.',
-      image: 'src/assets/images/mettzer.png',
+      image: mettzerImg,
       technologies: [
         'React',
         'SASS',
@@ -129,7 +140,7 @@ const Projects = () => {
       title: 'Waiter App',
       description:
         "The Waiter App is an application that allows customers of restaurants, snack bars and similar establishments to place orders quickly and conveniently, making the waiter's only job to take the order to the customer.",
-      image: 'src/assets/images/waiterApp.jpeg',
+      image: waiterAppImg,
       technologies: [
         'NodeJS',
         'NestJS',
@@ -148,7 +159,7 @@ const Projects = () => {
       title: 'Barsala',
       description:
         'Barsala is a platform that allows you to find the best bars and restaurants in your area.',
-      image: 'src/assets/images/barsala.png',
+      image: barsalaImg,
       technologies: ['React', 'TypeScript', 'NestJS', 'React Native'],
       category: 'fullstack',
       githubUrl: '',
@@ -159,7 +170,7 @@ const Projects = () => {
       title: 'Fidelidade Travel App',
       description:
         'Travel App keeps users informed about all trip activities and connected with fellow travelers. It allows users to share their experiences and stay up to date with announcements from the organizers.',
-      image: 'src/assets/images/travel-app.png',
+      image: travelAppImg,
       technologies: [
         'React Native',
         'TypeScript',
