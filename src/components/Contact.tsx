@@ -3,8 +3,9 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,40 +21,40 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'pedro@pedrobarrosdev.com.br',
-      href: 'mailto:pedro@pedrobarrosdev.com.br',
+      value: 'pedro.b.dev@gmail.com',
+      href: 'mailto:pedro.b.dev@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+55 (11) 99999-9999',
+      value: '+55 (73) 99957-7204',
       href: 'tel:+5511999999999',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'São Paulo, Brazil',
+      value: 'Belo Horizonte, Brazil',
       href: '#',
     },
   ];
 
   const socialLinks = [
     {
-      icon: Github,
+      icon: SiGithub,
       label: 'GitHub',
-      href: 'https://github.com',
+      href: 'https://github.com/pedrobadm7',
       color: 'hover:text-neutral-900',
     },
     {
-      icon: Linkedin,
+      icon: SiLinkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com',
+      href: 'https://www.linkedin.com/in/pedrobadm/',
       color: 'hover:text-blue-600',
     },
     {
       icon: Mail,
       label: 'Email',
-      href: 'mailto:pedro@pedrobarrosdev.com.br',
+      href: 'mailto:pedro.b.dev@gmail.com',
       color: 'hover:text-teal-600',
     },
   ];

@@ -3,14 +3,13 @@ import { Card } from '@/components/ui/card';
 const About = () => {
   const stats = [
     { label: 'Years Experience', value: '4+' },
-    { label: 'Projects Delivered', value: '50+' },
-    { label: 'Happy Clients', value: '25+' },
-    { label: 'Technologies', value: '15+' },
+    { label: 'Projects Delivered', value: '12+' },
+    { label: 'Happy Clients', value: '10+' },
+    { label: 'Technologies', value: '10+' },
   ];
 
   const technologies = [
-    'React', 'Next.js', 'TypeScript', 'Node.js',
-    'Python', 'PostgreSQL', 'Tailwind CSS', 'Figma'
+   'TypeScript', 'JavaScript', 'React', 'GraphQL', 'NextJS', 'Angular', 'Docker', 'Jest', 'Cypress', 'NodeJS', 'MongoDB', 'PostgreSQL', 'HTML5', 'CSS3'
   ];
 
   return (
@@ -36,7 +35,7 @@ const About = () => {
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-teal-400 to-teal-600 p-1">
                     <div className="w-full h-full rounded-full overflow-hidden bg-white p-2">
                       <img
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                        src="src/assets/profile.jpg"
                         alt="Pedro Barros"
                         className="w-full h-full object-cover rounded-full"
                         loading="lazy"

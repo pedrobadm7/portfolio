@@ -1,8 +1,9 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { useState } from 'react';
+import { SiGithub } from 'react-icons/si';
 
 interface Project {
   id: string;
@@ -21,66 +22,96 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
+      id: '0',
+      title: 'Tokenfi Launcher',
+      description: 'Launch your own cryptocurrency (like FLOKI) or NFTs without touching a line of code.',
+      image: 'src/assets/images/launcher.png',
+      technologies: ['React', 'TypeScript', 'TailwindCSS', 'WagmiJS', 'Viem', 'EtherJS'],
+      category: 'frontend',
+      liveUrl: 'https://www.tokenfi.com/token-launcher',
+    },
+    {
       id: '1',
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management.',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop',
-      technologies: ['React', 'Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
-      category: 'fullstack',
-      githubUrl: '#',
-      liveUrl: '#',
-      featured: true,
+      title: 'TokenFi Launchpad',
+      description: 'TokenFi Launchpad is a decentralized launchpad that allows users to raise funds and access liquidity for their tokens.',
+      image: 'src/assets/images/tokenfi.png',
+      technologies: ['React', 'TypeScript', 'TailwindCSS', 'WagmiJS', 'Viem', 'EtherJS'],
+      category: 'frontend',
+      liveUrl: 'https://lp.tokenfi.com/en-US',
     },
     {
       id: '2',
-      title: 'SaaS Dashboard',
-      description: 'Modern analytics dashboard with real-time data visualization, user management, and subscription handling.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-      technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-      category: 'frontend',
-      githubUrl: '#',
-      liveUrl: '#',
-      featured: true,
+      title: 'JP Morgan Chase Equity Gateway',
+      description: 'An automated equity management software that helps you save time and money, cut back on administration and get your employees engaged with their equity awards.',
+      image: 'src/assets/images/egv4.png',
+      technologies: ['React',  'TypeScript', 'MUI', 'React hooks'],
+      category: 'fullstack',
+      githubUrl: '',
+      liveUrl: 'https://www.globalshares.com/equity-management-software/',
+      featured: false
     },
     {
       id: '3',
-      title: 'Mobile Banking App',
-      description: 'Secure mobile banking application with biometric authentication and transaction tracking.',
-      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop',
-      technologies: ['React Native', 'TypeScript', 'Firebase'],
+      title: 'Zelus',
+      description: 'Zelus is a mobile wallet that allows you to send, receive and store crypto assets.',
+      image: 'src/assets/images/zelus.png',
+      technologies: ['React Native', 'Ether.js', 'Node.js', 'PostgreSQL', 'TypeScript'],
       category: 'mobile',
-      githubUrl: '#',
-      liveUrl: '#',
+      githubUrl: '',
+      liveUrl: 'https://www.zelus.io/solutions/zelus-wallet',
+      featured: false,
     },
     {
       id: '4',
-      title: 'Portfolio Website',
-      description: 'Responsive portfolio website with CMS integration and optimized performance.',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop',
-      technologies: ['Next.js', 'Tailwind CSS', 'Sanity CMS'],
-      category: 'frontend',
-      githubUrl: '#',
-      liveUrl: '#',
+      title: 'Finchek',
+      description: 'Fincheck is a financial control application, allowing you to register bank accounts and record expenses and income in a simple way.',
+      image: 'src/assets/images/fincheck.jpeg',
+      technologies: ['React', 'TypeScript', 'NodeJS', 'NestJS', 'PostgreSQL', 'TailwindCSS'],
+      category: 'fullstack',
+      githubUrl: 'https://github.com/pedrobadm7/fincheck-web',
+      liveUrl: '',
+      featured: true
     },
     {
       id: '5',
-      title: 'Task Management API',
-      description: 'RESTful API for task management with authentication, real-time updates, and team collaboration.',
-      image: 'https://images.unsplash.com/photo-1484662020986-75935d2ebc66?w=600&h=400&fit=crop',
-      technologies: ['Node.js', 'Express', 'PostgreSQL', 'Socket.io'],
-      category: 'backend',
-      githubUrl: '#',
+      title: 'Mettzer',
+      description: 'Mettzer is a platform designed to simplify the process of writing academic papers. It helps students focus on content by automating formatting and structure, making it easier to produce high-quality work without sacrificing time.',
+      image: 'src/assets/images/mettzer.png',
+      technologies: ['React', 'SASS', 'Jest', 'Cypress', 'MongoDB', 'NodeJS', 'PostgreSQL', 'ExpressJS'],
+      category: 'fullstack',
+      githubUrl: '',
+      liveUrl: 'https://www.mettzer.com/',
     },
     {
       id: '6',
-      title: 'Learning Platform',
-      description: 'Online learning platform with video streaming, progress tracking, and interactive quizzes.',
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop',
-      technologies: ['React', 'Python', 'Django', 'AWS'],
+      title: 'Waiter App',
+      description: "The Waiter App is an application that allows customers of restaurants, snack bars and similar establishments to place orders quickly and conveniently, making the waiter's only job to take the order to the customer.",
+      image: 'src/assets/images/waiterApp.jpeg',
+      technologies: ['NodeJS', 'NestJS', 'PostgreSQL', 'Socket.io', 'React', 'React Native', 'MongoDB'],
       category: 'fullstack',
-      githubUrl: '#',
-      liveUrl: '#',
+      githubUrl: 'https://github.com/pedrobadm7/mobile-waiterapp',
+      featured: true
     },
+    {
+      id: '7',
+      title: 'Barsala',
+      description: 'Barsala is a platform that allows you to find the best bars and restaurants in your area.',
+      image: 'src/assets/images/barsala.png',
+      technologies: ['React', 'TypeScript', 'NestJS', 'React Native'],
+      category: 'fullstack',
+      githubUrl: '',
+      liveUrl: 'https://www.barsala.com/',
+    },
+    {
+      id: '8',
+      title: 'Fidelidade Travel App',
+      description: "Travel App keeps users informed about all trip activities and connected with fellow travelers. It allows users to share their experiences and stay up to date with announcements from the organizers.",
+      image: 'src/assets/images/travel-app.png',
+      technologies: ['React Native', 'TypeScript', 'One Signal Push Notification'],
+      category: 'mobile',
+      githubUrl: '',
+      liveUrl: 'https://apps.apple.com/pt/app/fidelidade-travel-app/id1219435098',
+    }
   ];
 
   const filters = [
@@ -105,7 +136,7 @@ const Projects = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="font-display text-display-lg text-neutral-900 mb-6">
-              Featured Projects
+              Most important projects
             </h2>
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto mb-8">
               A showcase of my recent work, from concept to deployment
@@ -166,7 +197,7 @@ const Projects = () => {
                             rel="noopener noreferrer"
                             aria-label={`View ${project.title} source code`}
                           >
-                            <Github className="h-4 w-4" />
+                            <SiGithub className="h-4 w-4" />
                           </a>
                         </Button>
                       )}
@@ -228,11 +259,11 @@ const Projects = () => {
               asChild
             >
               <a
-                href="https://github.com"
+                href="https://github.com/pedrobadm7"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github className="mr-2 h-5 w-5" />
+                <SiGithub className="mr-2 h-5 w-5" />
                 View All on GitHub
               </a>
             </Button>

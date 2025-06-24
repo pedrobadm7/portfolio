@@ -40,15 +40,6 @@ const Navigation = () => {
   };
 
   return (
-    <>
-      <a
-        href="#main-content"
-        className="skip-link z-50"
-        onFocus={(e) => e.currentTarget.focus()}
-      >
-        Skip to main content
-      </a>
-
       <nav className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-b border-neutral-100">
         <div className="container-portfolio">
           <div className="flex items-center justify-between h-16 sm:h-20">
@@ -129,7 +120,6 @@ const Navigation = () => {
           </div>
         )}
       </nav>
-    </>
   );
 };
 
