@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ChevronUp, Heart } from 'lucide-react';
+import { ChevronUp } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -120,31 +120,6 @@ const Footer = () => {
               <div className="text-neutral-400 text-sm">
                 © {currentYear} Pedro Barros. All rights reserved.
               </div>
-
-              {/* Tech Stack */}
-              <div className="flex items-center text-neutral-400 text-sm">
-                <span>Built with</span>
-                <Heart className="h-4 w-4 text-red-500 mx-2" />
-                <span>using React, TypeScript & Tailwind CSS</span>
-              </div>
-
-              {/* Additional Links */}
-              <div className="flex items-center space-x-6 text-sm">
-                <button className="text-neutral-400 hover:text-teal-400 transition-colors duration-200">
-                  Privacy Policy
-                </button>
-                <button className="text-neutral-400 hover:text-teal-400 transition-colors duration-200">
-                  Terms of Service
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Performance Badge */}
-          <div className="mt-8 text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-neutral-800 rounded-full text-neutral-300 text-sm">
-              <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-              Lighthouse Score: Performance 95+ | Accessibility 100
             </div>
           </div>
         </div>
