@@ -23,9 +23,9 @@ const Footer = () => {
     {
       title: 'Connect',
       links: [
-        { label: 'GitHub', href: 'https://github.com', external: true },
-        { label: 'LinkedIn', href: 'https://linkedin.com', external: true },
-        { label: 'Email', href: 'mailto:pedro@pedrobarrosdev.com.br', external: true },
+        { label: 'GitHub', href: 'https://github.com/pedrobadm7', external: true },
+        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pedrobadm/', external: true },
+        { label: 'Email', href: 'mailto:pedro.b.dev@gmail.com', external: true },
       ],
     },
   ];

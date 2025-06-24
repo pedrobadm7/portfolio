@@ -26,15 +26,15 @@ const Contact = () => {
     },
     {
       icon: Phone,
-      label: 'Phone',
+      label: 'WhatsApp',
       value: '+55 (73) 99957-7204',
-      href: 'tel:+5511999999999',
+      href: 'https://wa.me/5573999577204?text=Hello%20Pedro%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch%20regarding%20a%20project%20opportunity.',
     },
     {
       icon: MapPin,
       label: 'Location',
       value: 'Belo Horizonte, Brazil',
-      href: '#',
+      href: 'https://www.google.com/maps/place/Belo+Horizonte,+MG,+Brazil',
     },
   ];
 
@@ -242,6 +242,8 @@ const Contact = () => {
                     <a
                       key={item.label}
                       href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center p-4 bg-white rounded-portfolio border border-neutral-200 hover:border-teal-300 hover:shadow-portfolio-sm transition-all duration-200 group"
                     >
                       <div className="w-12 h-12 bg-teal-50 rounded-portfolio flex items-center justify-center mr-4 group-hover:bg-teal-100 transition-colors duration-200">
