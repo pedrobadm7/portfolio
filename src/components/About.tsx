@@ -1,3 +1,4 @@
+import profileImg from '@/assets/profile.jpg';
 import { Card } from '@/components/ui/card';
 
 const About = () => {
@@ -49,7 +50,7 @@ const About = () => {
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-teal-400 to-teal-600 p-1">
                     <div className="w-full h-full rounded-full overflow-hidden bg-white p-2">
                       <img
-                        src="src/assets/profile.jpg"
+                        src={profileImg}
                         alt="Pedro Barros"
                         className="w-full h-full object-cover rounded-full"
                         loading="lazy"
