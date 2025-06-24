@@ -139,9 +139,9 @@ const Hero = () => {
       </main>
 
       {/* Background Elements */}
-      <div className="absolute top-1/4 left-4 w-64 h-64 bg-teal-50 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
+      <div className="pointer-events-none absolute top-1/4 left-4 w-64 h-64 bg-teal-50 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
       <div
-        className="absolute bottom-1/4 right-4 w-64 h-64 bg-neutral-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"
+        className="pointer-events-none absolute bottom-1/4 right-4 w-64 h-64 bg-neutral-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"
         style={{ animationDelay: '1s' }}
       ></div>
     </section>
