@@ -7,7 +7,7 @@ const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 
@@ -23,9 +23,21 @@ const Footer = () => {
     {
       title: 'Connect',
       links: [
-        { label: 'GitHub', href: 'https://github.com/pedrobadm7', external: true },
-        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pedrobadm/', external: true },
-        { label: 'Email', href: 'mailto:pedro.b.dev@gmail.com', external: true },
+        {
+          label: 'GitHub',
+          href: 'https://github.com/pedrobadm7',
+          external: true,
+        },
+        {
+          label: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/pedrobadm/',
+          external: true,
+        },
+        {
+          label: 'Email',
+          href: 'mailto:pedro.b.dev@gmail.com',
+          external: true,
+        },
       ],
     },
   ];
@@ -65,11 +77,14 @@ const Footer = () => {
                 Pedro Barros
               </h3>
               <p className="text-neutral-300 mb-6 max-w-md">
-                Passionate front-end and full-stack developer creating innovative
-                digital experiences. Let's build something amazing together.
+                Passionate front-end and full-stack developer creating
+                innovative digital experiences. Let's build something amazing
+                together.
               </p>
               <div className="flex items-center text-neutral-400">
-                <span className="mr-2">Currently available for new projects</span>
+                <span className="mr-2">
+                  Currently available for new projects
+                </span>
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               </div>
             </div>
@@ -84,7 +99,9 @@ const Footer = () => {
                   {section.links.map((link) => (
                     <li key={link.label}>
                       <button
-                        onClick={() => handleLinkClick(link.href, link.external)}
+                        onClick={() =>
+                          handleLinkClick(link.href, link.external)
+                        }
                         className="text-neutral-300 hover:text-teal-400 transition-colors duration-200 text-left"
                       >
                         {link.label}

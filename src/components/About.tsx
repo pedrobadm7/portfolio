@@ -9,7 +9,20 @@ const About = () => {
   ];
 
   const technologies = [
-   'TypeScript', 'JavaScript', 'React', 'GraphQL', 'NextJS', 'Angular', 'Docker', 'Jest', 'Cypress', 'NodeJS', 'MongoDB', 'PostgreSQL', 'HTML5', 'CSS3'
+    'TypeScript',
+    'JavaScript',
+    'React',
+    'GraphQL',
+    'NextJS',
+    'Angular',
+    'Docker',
+    'Jest',
+    'Cypress',
+    'NodeJS',
+    'MongoDB',
+    'PostgreSQL',
+    'HTML5',
+    'CSS3',
   ];
 
   return (
@@ -22,7 +35,8 @@ const About = () => {
               About Me
             </h2>
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              Turning ideas into elegant digital experiences through code and creativity
+              Turning ideas into elegant digital experiences through code and
+              creativity
             </p>
           </div>
 
@@ -57,19 +71,21 @@ const About = () => {
             <div className="order-1 lg:order-2">
               <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
                 <p>
-                  I'm a passionate full-stack developer with over 4 years of experience
-                  creating digital solutions that make a difference. My journey began in 2020,
-                  and since then, I've been dedicated to crafting exceptional web experiences.
+                  I'm a passionate full-stack developer with over 4 years of
+                  experience creating digital solutions that make a difference.
+                  My journey began in 2020, and since then, I've been dedicated
+                  to crafting exceptional web experiences.
                 </p>
                 <p>
-                  I specialize in modern web technologies like React, Next.js, and TypeScript,
-                  with a strong focus on performance, accessibility, and user experience.
-                  I believe in writing clean, maintainable code that scales.
+                  I specialize in modern web technologies like React, Next.js,
+                  and TypeScript, with a strong focus on performance,
+                  accessibility, and user experience. I believe in writing
+                  clean, maintainable code that scales.
                 </p>
                 <p>
-                  When I'm not coding, you'll find me exploring new technologies,
-                  contributing to open-source projects, or sharing knowledge with the
-                  developer community.
+                  When I'm not coding, you'll find me exploring new
+                  technologies, contributing to open-source projects, or sharing
+                  knowledge with the developer community.
                 </p>
               </div>
 
@@ -101,7 +117,10 @@ const About = () => {
               >
                 <div
                   className="animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'both' }}
+                  style={{
+                    animationDelay: `${index * 0.1}s`,
+                    animationFillMode: 'both',
+                  }}
                 >
                   <div className="font-display text-2xl sm:text-3xl font-bold text-teal-600 mb-2">
                     {stat.value}

@@ -64,9 +64,11 @@ const Contact = () => {
     },
   ];
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -81,11 +83,15 @@ const Contact = () => {
     }
 
     // Basic validation
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+    if (
+      !formData.name.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
       toast({
-        title: "Please fill in all fields",
-        description: "All fields are required to send your message.",
-        variant: "destructive",
+        title: 'Please fill in all fields',
+        description: 'All fields are required to send your message.',
+        variant: 'destructive',
       });
       return;
     }
@@ -94,9 +100,9 @@ const Contact = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
-        title: "Invalid email address",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
+        title: 'Invalid email address',
+        description: 'Please enter a valid email address.',
+        variant: 'destructive',
       });
       return;
     }
@@ -104,14 +110,19 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(serviceId, templateId, {
-        from_name: formData.name,
-        reply_to: formData.email,
-        message: formData.message,
-      }, publicKey);
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          message: formData.message,
+        },
+        publicKey,
+      );
 
       toast({
-        title: "Message sent successfully!",
+        title: 'Message sent successfully!',
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
 
@@ -123,9 +134,9 @@ const Contact = () => {
       });
     } catch (error) {
       toast({
-        title: "Failed to send message",
-        description: "Please try again or contact me directly via email.",
-        variant: "destructive",
+        title: 'Failed to send message',
+        description: 'Please try again or contact me directly via email.',
+        variant: 'destructive',
       });
     } finally {
       setIsSubmitting(false);
@@ -142,8 +153,8 @@ const Contact = () => {
               Let's Work Together
             </h2>
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              Have a project in mind? I'd love to hear about it.
-              Let's discuss how we can bring your ideas to life.
+              Have a project in mind? I'd love to hear about it. Let's discuss
+              how we can bring your ideas to life.
             </p>
           </div>
 
@@ -167,7 +178,10 @@ const Contact = () => {
                 />
 
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-neutral-700 mb-2"
+                  >
                     Full Name
                   </label>
                   <Input
@@ -183,7 +197,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-neutral-700 mb-2"
+                  >
                     Email Address
                   </label>
                   <Input
@@ -199,7 +216,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-neutral-700 mb-2"
+                  >
                     Message
                   </label>
                   <Textarea
@@ -260,9 +280,7 @@ const Contact = () => {
                         <div className="font-medium text-neutral-900 group-hover:text-teal-600 transition-colors duration-200">
                           {item.label}
                         </div>
-                        <div className="text-neutral-600">
-                          {item.value}
-                        </div>
+                        <div className="text-neutral-600">{item.value}</div>
                       </div>
                     </a>
                   ))}
@@ -296,8 +314,8 @@ const Contact = () => {
                   Response Time
                 </h4>
                 <p className="text-neutral-600">
-                  I typically respond to all inquiries within 24 hours.
-                  For urgent projects, feel free to reach out via phone.
+                  I typically respond to all inquiries within 24 hours. For
+                  urgent projects, feel free to reach out via phone.
                 </p>
               </Card>
             </div>
